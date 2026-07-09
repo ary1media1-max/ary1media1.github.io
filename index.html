@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="شركة أري الأولى للاستشارات الهندسية في المدينة المنورة – تصميم معماري، تصميم داخلي، مخططات وإشراف هندسي.">
+  <title>Ary | أري الأولى للاستشارات الهندسية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f3f3f1;--surface:#fff;--soft:#f8f8f6;--text:#121212;--muted:#686a6f;
+      --line:rgba(0,0,0,.085);--shadow:0 20px 56px rgba(0,0,0,.10);
+      --radius-xl:38px;--radius-lg:28px;--radius-md:20px;--max:1220px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:108px}
+    body{margin:0;font-family:"Cairo",system-ui,-apple-system,sans-serif;background:radial-gradient(circle at 10% 0,rgba(0,0,0,.055),transparent 26rem),linear-gradient(180deg,#fafaf9 0%,#f1f1ef 100%);color:var(--text)}
+    body.no-scroll{overflow:hidden}
+    a{text-decoration:none;color:inherit}img{display:block;max-width:100%}button{font:inherit}
+    .container{width:min(calc(100% - 32px),var(--max));margin-inline:auto}
+    .header{position:sticky;top:0;z-index:80;background:rgba(250,250,248,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(0,0,0,.055)}
+    .header-inner{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:13px;min-width:max-content}
+    .logo-box{position:relative;width:54px;height:54px;border-radius:16px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.055);overflow:hidden}
+    .logo-box img{position:relative;z-index:2;width:42px;height:42px;object-fit:contain}
+    .logo-fallback{position:absolute;inset:0;display:grid;place-items:center;font-size:13px;font-weight:900;letter-spacing:.04em}
+    .brand-name strong{display:block;font-size:16px;font-weight:900;line-height:1.2}.brand-name span{display:block;font-size:11.5px;color:var(--muted);margin-top:3px}
+    .nav{display:flex;align-items:center;justify-content:flex-end;gap:4px;flex-wrap:wrap}
+    .nav-link{padding:10px 12px;border-radius:999px;font-size:12.5px;font-weight:800;transition:.2s}.nav-link:hover{background:rgba(0,0,0,.055)}
+    .top-btn,.btn-dark,.btn-light,.btn-ghost,.action-btn,.action-btn-light{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;font-weight:800;transition:.2s;border:0;cursor:pointer}
+    .top-btn{padding:12px 17px;background:#111;color:#fff;font-size:13px;box-shadow:0 10px 24px rgba(0,0,0,.14)}
+    .top-btn:hover,.btn-dark:hover,.btn-light:hover,.btn-ghost:hover,.action-btn:hover,.action-btn-light:hover{transform:translateY(-2px)}
+
+    .hero{padding:28px 0 22px}.hero-shell{display:grid;grid-template-columns:1.18fr .82fr;gap:18px;align-items:stretch}
+    .hero-main{position:relative;overflow:hidden;min-height:590px;border-radius:44px;background:#232323;box-shadow:var(--shadow);isolation:isolate}
+    .hero-main:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.16) 42%,rgba(0,0,0,.78) 100%)}
+    .hero-main:after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 70% 20%,rgba(255,255,255,.15),transparent 32rem)}
+    .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.01)}
+    .hero-content{position:relative;z-index:2;min-height:590px;display:flex;flex-direction:column;justify-content:flex-end;padding:34px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;align-self:flex-start;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(12px);color:#fff;font-size:11.5px;font-weight:800}
+    .eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:#fff}
+    .hero h1{margin:19px 0 0;max-width:740px;color:#fff;font-size:clamp(37px,5vw,68px);line-height:1.12;font-weight:900;letter-spacing:-.045em}
+    .hero p{margin:15px 0 0;max-width:680px;color:rgba(255,255,255,.9);font-size:14.5px;line-height:2}
+    .hero-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:23px}.btn-dark,.btn-light,.btn-ghost{padding:14px 19px;font-size:13.5px}.btn-light{background:#fff;color:#111}.btn-dark{background:#111;color:#fff}.btn-ghost{color:#fff;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.21);backdrop-filter:blur(10px)}
+    .hero-side{display:grid;gap:18px}.panel,.mini-card,.service-card,.contact-card,.map-card{background:var(--surface);border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow)}
+    .panel{padding:25px}.panel-top{display:flex;align-items:center;gap:14px}.panel .logo-box{width:72px;height:72px;border-radius:22px;flex:none}.panel .logo-box img{width:54px;height:54px}.panel h2{margin:0;font-size:24px;line-height:1.35;font-weight:900}.panel p{margin:11px 0 0;color:var(--muted);font-size:13.5px;line-height:2}.panel-list{display:grid;gap:10px;margin-top:18px}.bullet{padding:13px 14px;border-radius:18px;background:var(--soft);border:1px solid var(--line);font-size:12.8px;font-weight:750}
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.mini-card{padding:18px}.mini-card strong{display:block;font-size:14.5px;font-weight:900}.mini-card span{display:block;margin-top:6px;font-size:12.5px;line-height:1.85;color:var(--muted)}
+
+    .section{padding:30px 0}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:19px}.section-head h2{margin:0;font-size:31px;line-height:1.2;font-weight:900}.section-head p{margin:7px 0 0;max-width:680px;color:var(--muted);font-size:13.5px;line-height:1.95}.section-tag{padding:9px 13px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:11.5px;font-weight:800;color:#494b4f;white-space:nowrap}
+    .services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.service-card{padding:23px;min-height:215px}.service-card .num{font-size:12px;color:#86888c;font-weight:900}.service-card h3{margin:12px 0 0;font-size:18px;font-weight:900}.service-card p{margin:9px 0 0;color:var(--muted);font-size:13px;line-height:2}
+
+    .portfolio-toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.filter-btn{border:1px solid var(--line);background:#fff;color:#303135;padding:10px 15px;border-radius:999px;font-size:12px;font-weight:800;cursor:pointer;transition:.2s}.filter-btn:hover,.filter-btn.active{background:#111;color:#fff;border-color:#111}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:150px;grid-auto-flow:dense;gap:16px}
+    .project-card{position:relative;overflow:hidden;border-radius:26px;background:#ddd;box-shadow:0 14px 36px rgba(0,0,0,.09);cursor:pointer;isolation:isolate;outline:none}.project-card.regular{grid-column:span 4;grid-row:span 2}.project-card.wide{grid-column:span 8;grid-row:span 2}.project-card.tall{grid-column:span 4;grid-row:span 3}.project-card[hidden]{display:none}
+    .project-card img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .35s}.project-shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.78) 100%);z-index:1}.project-info{position:absolute;z-index:2;right:20px;left:64px;bottom:18px;color:#fff;transition:transform .28s}.project-info span{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(8px);font-size:10.5px;font-weight:800}.project-info h3{margin:10px 0 0;font-size:18px;line-height:1.3}.project-info p{margin:4px 0 0;color:rgba(255,255,255,.78);font-size:11.5px;line-height:1.65}.project-open{position:absolute;z-index:3;left:18px;bottom:18px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#111;background:#fff;font-size:19px;font-weight:900;transform:translateY(5px);opacity:.92;transition:.25s}.project-card:hover img,.project-card:focus img{transform:scale(1.055)}.project-card:hover .project-open,.project-card:focus .project-open{transform:translateY(0) rotate(-8deg)}
+    .portfolio-note{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:16px;padding:16px 18px;border-radius:20px;background:rgba(255,255,255,.72);border:1px solid var(--line);color:var(--muted);font-size:12.5px;line-height:1.8}.portfolio-note strong{color:#111}
+
+    .contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.contact-card{padding:22px;display:flex;flex-direction:column;gap:13px}.card-icon{width:54px;height:54px;border-radius:17px;background:#111;color:#fff;display:grid;place-items:center;font-size:20px;font-weight:900}.contact-card h3{margin:0;font-size:17px;font-weight:900}.contact-card p{margin:0;color:var(--muted);font-size:12.8px;line-height:1.85}.contact-card strong{font-size:16px;direction:ltr;text-align:right}.card-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:auto}.action-btn,.action-btn-light{padding:11px 15px;font-size:12px}.action-btn{background:#111;color:#fff}.action-btn-light{background:#f4f4f3;color:#111;border:1px solid var(--line)}
+    .map-card{overflow:hidden}.map-layout{display:grid;grid-template-columns:1.05fr .95fr}.map-info{padding:27px}.map-info h3{margin:0;font-size:24px;font-weight:900}.map-info p{margin:11px 0 0;color:var(--muted);font-size:13.5px;line-height:2}.map-points{display:grid;gap:9px;margin-top:18px}.map-point{padding:12px 14px;border-radius:16px;background:var(--soft);border:1px solid var(--line);font-size:12.5px;font-weight:750}.map-visual{position:relative;min-height:350px;background:#ddd;overflow:hidden}.map-visual img{width:100%;height:100%;object-fit:cover}.map-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.2))}.map-overlay{position:absolute;z-index:2;right:18px;left:18px;bottom:18px;padding:14px;border-radius:18px;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.06);backdrop-filter:blur(10px);box-shadow:0 10px 28px rgba(0,0,0,.08)}.map-overlay strong{display:block;font-size:14px;font-weight:900}.map-overlay span{display:block;margin-top:3px;font-size:12px;color:var(--muted)}
+    .cta{margin:26px 0 38px;padding:31px;border-radius:38px;background:#111;color:#fff;box-shadow:0 22px 60px rgba(0,0,0,.18)}.cta-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:center}.cta h2{margin:0;font-size:34px;line-height:1.25;font-weight:900}.cta p{margin:11px 0 0;color:rgba(255,255,255,.75);font-size:13.5px;line-height:2}.cta-box{padding:22px;border-radius:26px;background:rgba(255,255,255,.065);border:1px solid rgba(255,255,255,.09)}.cta-box strong{display:block;font-size:17px;font-weight:900}.cta-box span{display:block;margin-top:7px;color:rgba(255,255,255,.72);font-size:12.5px;line-height:1.85}
+    .footer{padding:0 0 40px}.footer-box{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 20px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:0 10px 28px rgba(0,0,0,.05)}.footer-brand{display:flex;align-items:center;gap:11px}.footer-brand .logo-box{width:42px;height:42px;border-radius:13px}.footer-brand .logo-box img{width:32px;height:32px}.footer-brand strong{display:block;font-size:14px;font-weight:900}.footer-brand span{display:block;font-size:11px;color:var(--muted)}.footer-box small{font-size:11.5px;line-height:1.8;color:var(--muted)}
+
+    .lightbox{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(9,9,9,.92);backdrop-filter:blur(10px)}.lightbox.open{display:flex}.lightbox-dialog{position:relative;width:min(1120px,100%);height:min(88vh,820px);display:grid;grid-template-rows:1fr auto;overflow:hidden;border-radius:28px;background:#111;border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 90px rgba(0,0,0,.45)}.lightbox-media{min-height:0;display:grid;place-items:center;background:#090909}.lightbox-img{width:100%;height:100%;object-fit:contain}.lightbox-caption{padding:17px 68px 17px 20px;color:#fff;background:#111}.lightbox-caption h3{margin:0;font-size:17px}.lightbox-caption p{margin:4px 0 0;color:rgba(255,255,255,.68);font-size:12px}.lb-close,.lb-prev,.lb-next{position:absolute;z-index:3;border:1px solid rgba(255,255,255,.16);background:rgba(18,18,18,.72);color:#fff;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(8px);transition:.2s}.lb-close:hover,.lb-prev:hover,.lb-next:hover{background:#fff;color:#111}.lb-close{top:15px;left:15px;width:44px;height:44px;border-radius:50%;font-size:24px}.lb-prev,.lb-next{top:50%;width:46px;height:58px;border-radius:16px;transform:translateY(-50%);font-size:24px}.lb-prev{right:15px}.lb-next{left:15px}
+    .floating-contact{position:fixed;z-index:70;left:18px;bottom:18px;display:flex;flex-direction:column;gap:9px}.floating-contact a{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#111;color:#fff;border:1px solid rgba(255,255,255,.15);box-shadow:0 12px 28px rgba(0,0,0,.22);font-size:18px;font-weight:900;transition:.2s}.floating-contact a:hover{transform:translateY(-2px) scale(1.03)}
+
+    @media(max-width:1020px){.hero-shell,.map-layout,.cta-grid{grid-template-columns:1fr}.hero-side{grid-template-columns:1fr 1fr}.panel{grid-column:1/-1}.services-grid{grid-template-columns:1fr 1fr}.project-card.regular,.project-card.wide,.project-card.tall{grid-column:span 6;grid-row:span 2}.project-card.tall{grid-row:span 3}}
+    @media(max-width:780px){.header-inner{padding:10px 0;min-height:auto;align-items:flex-start}.nav{display:none}.hero-main,.hero-content{min-height:520px}.hero-side,.mini-grid,.services-grid,.contact-grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.portfolio-grid{grid-auto-rows:120px}.project-card.regular,.project-card.wide,.project-card.tall{grid-column:span 12;grid-row:span 3}.project-card.wide{grid-row:span 2}.portfolio-note{align-items:flex-start;flex-direction:column}.lightbox{padding:8px}.lightbox-dialog{height:94vh;border-radius:20px}.lightbox-caption{padding:14px 58px 14px 16px}.lb-prev,.lb-next{width:42px;height:52px}.floating-contact{left:12px;bottom:12px}}
+    @media(max-width:540px){.container{width:min(calc(100% - 22px),var(--max))}.brand-name span{display:none}.hero{padding-top:12px}.hero-main{border-radius:30px}.hero-content{padding:22px}.hero h1{font-size:36px}.hero p{font-size:13px}.hero-actions{flex-direction:column}.hero-actions>a,.hero-actions>button{width:100%}.panel,.mini-card,.service-card,.contact-card,.map-info,.cta{padding:20px}.section{padding:24px 0}.section-head h2{font-size:27px}.project-card{border-radius:21px}.project-info{right:16px;left:58px;bottom:15px}.project-open{left:15px;bottom:15px}.cta h2{font-size:28px}.footer-box{align-items:flex-start;flex-direction:column}.floating-contact a{width:45px;height:45px}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="العودة إلى أعلى الصفحة">
+        <div class="logo-box"><span class="logo-fallback">ARY</span><img src="logo.png" alt="شعار Ary" onerror="this.style.display='none'"></div>
+        <div class="brand-name"><strong>Ary</strong><span>Engineering Consultancy</span></div>
+      </a>
+      <nav class="nav" aria-label="التنقل الرئيسي">
+        <a class="nav-link" href="#about">نبذة</a>
+        <a class="nav-link" href="#services">الخدمات</a>
+        <a class="nav-link" href="#portfolio">أعمالنا</a>
+        <a class="nav-link" href="#contact">التواصل</a>
+        <a class="nav-link" href="#location">الموقع</a>
+        <a class="top-btn" href="#contact">طلب استشارة</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-shell">
+        <div class="hero-main">
+          <img class="hero-bg" src="assets/projects/project-08.webp" alt="أحد مشاريع شركة أري">
+          <div class="hero-content">
+            <div class="eyebrow">Ary Engineering Consultancy</div>
+            <h1>نصمم المساحات التي تصنع أثرًا</h1>
+            <p>شركة أري الأولى للاستشارات الهندسية، نقدم حلولًا متكاملة في التصميم المعماري والتطوير الهندسي، تجمع بين الإبداع والدقة والهوية المحلية المعاصرة.</p>
+            <div class="hero-actions">
+              <a class="btn-light" href="#portfolio">شاهد أعمالنا</a>
+              <a class="btn-dark" href="tel:+966563110322">اتصال مباشر</a>
+              <a class="btn-ghost" href="https://wa.me/966563110322?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D9%86%20Ary." target="_blank" rel="noopener">واتساب</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="panel" id="about">
+            <div class="panel-top">
+              <div class="logo-box"><span class="logo-fallback">ARY</span><img src="logo.png" alt="شعار Ary" onerror="this.style.display='none'"></div>
+              <div><h2>أري الأولى للاستشارات الهندسية</h2></div>
+            </div>
+            <p>نحوّل الأفكار إلى مشاريع مدروسة وقابلة للتنفيذ، من خلال فهم احتياجات العميل، تطوير الفكرة، وإخراجها بمعايير هندسية واضحة وهوية معمارية مميزة.</p>
+            <div class="panel-list">
+              <div class="bullet">تصاميم معمارية تجمع الجمال والكفاءة</div>
+              <div class="bullet">حلول متكاملة للمشاريع السكنية والتجارية والفندقية</div>
+              <div class="bullet">اهتمام بالتفاصيل وجودة العرض والتواصل</div>
+            </div>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-card"><strong>الموقع</strong><span>المدينة المنورة<br>المملكة العربية السعودية</span></div>
+            <div class="mini-card"><strong>أرقام التواصل</strong><span dir="ltr">056 311 0322<br>058 160 7016</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head"><div><h2>خدماتنا</h2><p>نقدم خدمات هندسية متكاملة تواكب احتياجات المشروع من الفكرة وحتى مراحل التطوير والإخراج.</p></div><span class="section-tag">Professional Services</span></div>
+        <div class="services-grid">
+          <div class="service-card"><div class="num">01</div><h3>التصميم المعماري</h3><p>تطوير الأفكار والمخططات والواجهات بأسلوب إبداعي يحقق متطلبات المشروع ويراعي الوظيفة والهوية.</p></div>
+          <div class="service-card"><div class="num">02</div><h3>التصميم الداخلي</h3><p>تصميم مساحات داخلية متوازنة تجمع الراحة والجمال وجودة تجربة المستخدم.</p></div>
+          <div class="service-card"><div class="num">03</div><h3>المخططات التنفيذية</h3><p>إعداد وتنسيق المخططات والتفاصيل اللازمة للتنفيذ بدقة ووضوح.</p></div>
+          <div class="service-card"><div class="num">04</div><h3>الإظهار المعماري</h3><p>مناظير ورندرات واقعية تساعد العميل على تصور المشروع واتخاذ القرارات بثقة.</p></div>
+          <div class="service-card"><div class="num">05</div><h3>الاستشارات الهندسية</h3><p>دراسة الخيارات وتقديم حلول مدروسة تدعم القرار وتحقق أفضل استفادة من المشروع.</p></div>
+          <div class="service-card"><div class="num">06</div><h3>الإشراف والتنسيق</h3><p>متابعة فنية وتنسيق بين التخصصات لدعم جودة التنفيذ وتقليل التعارضات.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-head"><div><h2>نماذج من أعمالنا</h2><p>مجموعة مختارة من مشاريعنا السكنية والتجارية والفندقية، تعكس تنوع الحلول واهتمامنا بالهوية والتفاصيل.</p></div><span class="section-tag">Selected Works</span></div>
+        <div class="portfolio-toolbar" role="group" aria-label="تصفية المشاريع">
+          <button class="filter-btn active" type="button" data-filter="all">الكل</button>
+          <button class="filter-btn" type="button" data-filter="residential">سكني</button>
+          <button class="filter-btn" type="button" data-filter="commercial">تجاري</button>
+          <button class="filter-btn" type="button" data-filter="hospitality">فندقي</button>
+        </div>
+        <div class="portfolio-grid">
+          <article class="project-card wide" data-category="commercial" tabindex="0" role="button" aria-label="عرض مشروع درايف ثرو" data-index="0">
+            <img src="assets/projects/project-01.webp" alt="مشروع درايف ثرو – واجهة تجارية بطابع معماري معاصر" loading="lazy" decoding="async">
+            <div class="project-shade"></div>
+            <div class="project-info">
+              <span>تجاري</span>
+              <h3>مشروع درايف ثرو</h3>
+              <p>واجهة تجارية بطابع معماري معاصر</p>
+            </div>
+            <div class="project-open" aria-hidden="true">↗</div>
+          </article>
+          <article class="project-card wide" data-category="commercial" tabindex="0" role="button" aria-label="عرض مشروع درايف ثرو" data-index="1">
+            <img src="assets/projects/project-02.webp" alt="مشروع درايف ثرو – منظور عام وتنسيق للموقع" loading="lazy" decoding="async">
+            <div class="project-shade"></div>
+            <div class="project-info">
+              <span>تجاري</span>
+              <h3>مشروع درايف ثرو</h3>
+              <p>منظور عام وتنسيق للموقع</p>
+            </div>
+            <div class="project-open" aria-hidden="true">↗</div>
+          </article>
+          <article class="project-card tall" data-category="residential" tabindex="0" role="button" aria-label="عرض عمارة سكنية" data-index="2">
+            <img src="assets/projects/project-03.webp" alt="عمارة سكنية – واجهة سكنية بطابع مديني معاصر" loading="lazy" decoding="async">
+            <div class="project-shade"></div>
+            <div class="project-info">
+              <span>سكني</span>
+              <h3>عمارة سكنية</h3>
+              <p>واجهة سكنية بطابع مديني معاصر</p>
+            </div>
+            <div class="project-open" aria-hidden="true">↗</div>
+          </article>
+          <article class="project-card regular" data-category="residential" tabindex="0" role="button" aria-label="عرض عمارة شقق سكنية" data-index="3">
+            <img src="assets/projects/project-04.webp" alt="عمارة شقق سكنية – معالجة معمارية تجمع الحجر والبازلت والرواشين" loading="lazy" decoding="async">
+            <div class="project-shade"></div>
+            <div class="project-info">
+              <span>سكني</span>
+              <h3>عمارة شقق سكنية</h3>
+              <p>معالجة معمارية تجمع الحجر والبازلت والرواشين</p>
+            </div>
+            <div class="project-open" aria-hidden="true">↗</div>
+          </article>
+          <article class="project-card tall" data-category="hospitality" tabindex="0" role="button" aria-label="عرض فندق بوتيك" data-index="4">
+            <img src="assets/projects/project-05.webp" alt="فندق بوتيك – واجهة فندقية حضرية بتفاصيل هندسية مضاءة" loading="lazy" decoding="async">
+            <div class="project-shade"></div>
+            <div class="project-info">
+              <span>فندقي</span>
+              <h3>فندق بوتيك</h3>
+              <p>واجهة فندقية حضرية بتفاصيل هندسية مضاءة</p>
+            </div>
+            <div class="project-open" aria-hidden="true">↗</div>
+          </article>
+          <article class="project-card wide" data-category="residential" tabindex="0" role="button" aria-label="عرض فيلا سكنية" data-index="5">
+            <img src="assets/projects/project-06.webp" alt="فيلا سكنية – تصميم واجهة مستلهم من الهوية المحلية" loading="lazy" decoding="async">
+            <div class="project-shade"></div>
+            <div class="project-info">
+              <span>سكني</span>
+              <h3>فيلا سكنية</h3>
+              <p>تصميم واجهة مستلهم من الهوية المحلية</p>
+            </div>
+            <div class="project-open" aria-hidden="true">↗</div>
+          </article>
+          <article class="project-card wide" data-category="residential" tabindex="0" role="button" aria-label="عرض فيلا معاصرة" data-index="6">
+            <img src="assets/projects/project-07.webp" alt="فيلا معاصرة – واجهة نهارية بتفاصيل زخرفية وخامات طبيعية" loading="lazy" decoding="async">
+            <div class="project-shade"></div>
+            <div class="project-info">
+              <span>سكني</span>
+              <h3>فيلا معاصرة</h3>
+              <p>واجهة نهارية بتفاصيل زخرفية وخامات طبيعية</p>
+            </div>
+            <div class="project-open" aria-hidden="true">↗</div>
+          </article>
+          <article class="project-card wide" data-category="commercial" tabindex="0" role="button" aria-label="عرض مجمع محلات تجارية" data-index="7">
+            <img src="assets/projects/project-08.webp" alt="مجمع محلات تجارية – تصميم تجاري متكامل مع تنسيق الموقع والمواقف" loading="lazy" decoding="async">
+            <div class="project-shade"></div>
+            <div class="project-info">
+              <span>تجاري</span>
+              <h3>مجمع محلات تجارية</h3>
+              <p>تصميم تجاري متكامل مع تنسيق الموقع والمواقف</p>
+            </div>
+            <div class="project-open" aria-hidden="true">↗</div>
+          </article>
+          <article class="project-card tall" data-category="hospitality" tabindex="0" role="button" aria-label="عرض مشروع فندق حضري" data-index="8">
+            <img src="assets/projects/project-09.webp" alt="مشروع فندق حضري – واجهة رأسية حديثة وتكوين معماري مميز" loading="lazy" decoding="async">
+            <div class="project-shade"></div>
+            <div class="project-info">
+              <span>فندقي</span>
+              <h3>مشروع فندق حضري</h3>
+              <p>واجهة رأسية حديثة وتكوين معماري مميز</p>
+            </div>
+            <div class="project-open" aria-hidden="true">↗</div>
+          </article>
+          <article class="project-card regular" data-category="residential" tabindex="0" role="button" aria-label="عرض فيلا سكنية" data-index="9">
+            <img src="assets/projects/project-10.webp" alt="فيلا سكنية – منظور ليلي وإضاءة معمارية متوازنة" loading="lazy" decoding="async">
+            <div class="project-shade"></div>
+            <div class="project-info">
+              <span>سكني</span>
+              <h3>فيلا سكنية</h3>
+              <p>منظور ليلي وإضاءة معمارية متوازنة</p>
+            </div>
+            <div class="project-open" aria-hidden="true">↗</div>
+          </article>
+          <article class="project-card regular" data-category="residential" tabindex="0" role="button" aria-label="عرض فيلا بالطراز المديني" data-index="10">
+            <img src="assets/projects/project-11.webp" alt="فيلا بالطراز المديني – تفاصيل معاصرة مستوحاة من العمارة المدينية" loading="lazy" decoding="async">
+            <div class="project-shade"></div>
+            <div class="project-info">
+              <span>سكني</span>
+              <h3>فيلا بالطراز المديني</h3>
+              <p>تفاصيل معاصرة مستوحاة من العمارة المدينية</p>
+            </div>
+            <div class="project-open" aria-hidden="true">↗</div>
+          </article>
+          <article class="project-card regular" data-category="residential" tabindex="0" role="button" aria-label="عرض فيلا سكنية معاصرة" data-index="11">
+            <img src="assets/projects/project-12.webp" alt="فيلا سكنية معاصرة – واجهة نهارية بخامات البازلت والخشب" loading="lazy" decoding="async">
+            <div class="project-shade"></div>
+            <div class="project-info">
+              <span>سكني</span>
+              <h3>فيلا سكنية معاصرة</h3>
+              <p>واجهة نهارية بخامات البازلت والخشب</p>
+            </div>
+            <div class="project-open" aria-hidden="true">↗</div>
+          </article>
+        </div>
+        <div class="portfolio-note"><span><strong>اضغط على أي مشروع</strong> لعرض الصورة بالحجم الكامل والتنقل بين الأعمال.</span><span>التصميم • التطوير • الإظهار المعماري</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head"><div><h2>تواصل معنا</h2><p>اختر الرقم الأنسب لك للاتصال أو بدء محادثة مباشرة عبر واتساب.</p></div><span class="section-tag">Contact</span></div>
+        <div class="contact-grid">
+          <div class="contact-card"><div class="card-icon">01</div><h3>رقم التواصل الأول</h3><p>للاتصال المباشر أو إرسال تفاصيل المشروع عبر واتساب.</p><strong>056 311 0322</strong><div class="card-actions"><a class="action-btn" href="tel:+966563110322">اتصل الآن</a><a class="action-btn-light" href="https://wa.me/966563110322?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D9%86%20Ary." target="_blank" rel="noopener">واتساب</a></div></div>
+          <div class="contact-card"><div class="card-icon">02</div><h3>رقم التواصل الثاني</h3><p>قناة إضافية للتواصل السريع والاستفسارات وطلبات المشاريع.</p><strong>058 160 7016</strong><div class="card-actions"><a class="action-btn" href="tel:+966581607016">اتصل الآن</a><a class="action-btn-light" href="https://wa.me/966581607016?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D9%86%20Ary." target="_blank" rel="noopener">واتساب</a></div></div>
+          <div class="contact-card"><div class="card-icon">✉</div><h3>البريد الإلكتروني</h3><p>للمراسلات الرسمية وإرسال الملفات والمخططات والتفاصيل.</p><strong style="font-size:14px">ary1consult@gmail.com</strong><div class="card-actions"><a class="action-btn" href="mailto:ary1consult@gmail.com">إرسال بريد</a><a class="action-btn-light" href="mailto:ary1consult@gmail.com?subject=Request%20Consultation">طلب استشارة</a></div></div>
+          <div class="contact-card"><div class="card-icon">◆</div><h3>طلب استشارة</h3><p>أرسل نبذة عن مشروعك، نوع الخدمة المطلوبة، والموقع لنبدأ معك بشكل منظم.</p><strong style="font-size:14px;direction:rtl">Ary Consultation Request</strong><div class="card-actions"><a class="action-btn" href="https://wa.me/966563110322?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D9%86%20Ary." target="_blank" rel="noopener">ابدأ عبر واتساب</a><a class="action-btn-light" href="#location">عرض الموقع</a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="location">
+      <div class="container">
+        <div class="section-head"><div><h2>موقع الشركة</h2><p>يمكنك فتح موقع أري مباشرة في خرائط Google والوصول إلينا بسهولة.</p></div><span class="section-tag">Location</span></div>
+        <div class="map-card"><div class="map-layout">
+          <div class="map-info"><h3>شركة أري الأولى للاستشارات الهندسية</h3><p>نستقبل استفساراتكم وطلبات المشاريع في المدينة المنورة، ونوفر قنوات تواصل مباشرة لتسهيل بدء العمل ومناقشة احتياجات المشروع.</p><div class="map-points"><div class="map-point">المدينة المنورة</div><div class="map-point">المملكة العربية السعودية</div><div class="map-point">رابط مباشر إلى Google Maps</div></div><div class="hero-actions"><a class="btn-dark" href="https://maps.app.goo.gl/NVrWLvPVU8QQjUFi6" target="_blank" rel="noopener">فتح الموقع</a><a class="btn-light" href="#contact">تواصل معنا</a></div></div>
+          <div class="map-visual"><img src="assets/projects/project-11.webp" alt="مشروع معماري من أعمال أري" loading="lazy"><div class="map-overlay"><strong>Ary Engineering Consultancy</strong><span>Madinah, Saudi Arabia</span></div></div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="container"><div class="cta"><div class="cta-grid"><div><h2>لديك مشروع؟ لنبدأ الحديث.</h2><p>شاركنا فكرتك ومتطلباتك، وسنتواصل معك لفهم المشروع واقتراح الخطوة المناسبة للبدء.</p></div><div class="cta-box"><strong>ابدأ طلب الاستشارة الآن</strong><span>تواصل عبر واتساب على الرقم الأول أو استخدم الرقم الثاني من قسم التواصل.</span><div class="hero-actions"><a class="btn-light" href="https://wa.me/966563110322?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D9%86%20Ary." target="_blank" rel="noopener">طلب استشارة</a></div></div></div></div></section>
+  </main>
+
+  <footer class="footer"><div class="container footer-box"><div class="footer-brand"><div class="logo-box"><span class="logo-fallback">ARY</span><img src="logo.png" alt="شعار Ary" onerror="this.style.display='none'"></div><div><strong>Ary</strong><span>Engineering Consultancy</span></div></div><small>© <span id="year"></span> Ary Engineering Consultancy<br>Madinah, Saudi Arabia</small></div></footer>
+
+  <div class="floating-contact" aria-label="تواصل سريع"><a href="tel:+966563110322" title="اتصال">☎</a><a href="https://wa.me/966563110322" target="_blank" rel="noopener" title="واتساب">✦</a></div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="معرض المشاريع">
+    <div class="lightbox-dialog">
+      <button class="lb-close" type="button" aria-label="إغلاق">×</button>
+      <button class="lb-prev" type="button" aria-label="الصورة السابقة">›</button>
+      <button class="lb-next" type="button" aria-label="الصورة التالية">‹</button>
+      <div class="lightbox-media"><img class="lightbox-img" src="" alt=""></div>
+      <div class="lightbox-caption"><h3></h3><p></p></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const filterBtns=[...document.querySelectorAll('.filter-btn')];
+    const cards=[...document.querySelectorAll('.project-card')];
+    filterBtns.forEach(btn=>btn.addEventListener('click',()=>{
+      filterBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+      const filter=btn.dataset.filter;
+      cards.forEach(card=>card.hidden=!(filter==='all'||card.dataset.category===filter));
+    }));
+
+    const lightbox=document.getElementById('lightbox');
+    const lbImg=lightbox.querySelector('.lightbox-img');
+    const lbTitle=lightbox.querySelector('.lightbox-caption h3');
+    const lbDesc=lightbox.querySelector('.lightbox-caption p');
+    let current=0;
+    const visibleCards=()=>cards.filter(c=>!c.hidden);
+    function showCard(card){
+      const img=card.querySelector('img');
+      lbImg.src=img.src;lbImg.alt=img.alt;
+      lbTitle.textContent=card.querySelector('h3').textContent;
+      lbDesc.textContent=card.querySelector('p').textContent;
+      current=visibleCards().indexOf(card);
+    }
+    function openLightbox(card){showCard(card);lightbox.classList.add('open');document.body.classList.add('no-scroll');lightbox.querySelector('.lb-close').focus()}
+    function closeLightbox(){lightbox.classList.remove('open');document.body.classList.remove('no-scroll')}
+    function move(step){const list=visibleCards();current=(current+step+list.length)%list.length;showCard(list[current])}
+    cards.forEach(card=>{card.addEventListener('click',()=>openLightbox(card));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLightbox(card)}})});
+    lightbox.querySelector('.lb-close').addEventListener('click',closeLightbox);
+    lightbox.querySelector('.lb-prev').addEventListener('click',()=>move(-1));
+    lightbox.querySelector('.lb-next').addEventListener('click',()=>move(1));
+    lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox()});
+    document.addEventListener('keydown',e=>{if(!lightbox.classList.contains('open'))return;if(e.key==='Escape')closeLightbox();if(e.key==='ArrowRight')move(-1);if(e.key==='ArrowLeft')move(1)});
+  </script>
+</body>
+</html>
