@@ -1,0 +1,1688 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151412">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="شركة أري الأولى للاستشارات الهندسية في المدينة المنورة. تصميم معماري، تصميم داخلي، واجهات، مخططات تنفيذية، إظهار وإشراف هندسي.">
+  <meta name="keywords" content="استشارات هندسية، تصميم معماري، تصميم داخلي، المدينة المنورة، أري الأولى، مكتب هندسي">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_SA">
+  <meta property="og:site_name" content="أري الأولى للاستشارات الهندسية">
+  <meta property="og:title" content="أري الأولى للاستشارات الهندسية">
+  <meta property="og:description" content="حلول معمارية وهندسية متكاملة تصنع أثرًا يتجاوز المكان.">
+  <meta property="og:image" content="https://ary1media1-max.github.io/ary1media1.github.io/assets/hero-commercial-complex.webp">
+  <link rel="canonical" href="https://ary1media1-max.github.io/ary1media1.github.io/">
+  <link rel="icon" href="assets/ary-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Noto+Kufi+Arabic:wght@500;600;700&display=swap" rel="stylesheet">
+  <title>أري الأولى للاستشارات الهندسية | تصميم معماري وداخلي</title>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"شركة أري الأولى للاستشارات الهندسية","alternateName":"Ary Engineering Consultancy","url":"https://ary1media1-max.github.io/ary1media1.github.io/","email":"ary1consult@gmail.com","telephone":"+966563110322","address":{"@type":"PostalAddress","addressLocality":"المدينة المنورة","addressCountry":"SA"},"areaServed":"SA"}</script>
+  <style>:root {
+  --ink: #151412;
+  --ink-soft: #292722;
+  --paper: #f4f1eb;
+  --paper-deep: #e9e3d9;
+  --white: #fffdf8;
+  --sand: #b18a5c;
+  --sand-light: #d8c3a4;
+  --muted: #6b675f;
+  --line: rgba(21, 20, 18, 0.14);
+  --line-light: rgba(255, 253, 248, 0.18);
+  --shadow: 0 28px 80px rgba(27, 22, 15, 0.14);
+  --shell: 1320px;
+  --header-h: 88px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 24px);
+  background: var(--paper);
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 8% 4%, rgba(177, 138, 92, 0.09), transparent 24rem),
+    var(--paper);
+  color: var(--ink);
+  font-family: "Cairo", Tahoma, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.menu-open,
+body.dialog-open {
+  overflow: hidden;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--sand);
+  color: var(--white);
+}
+
+:focus-visible {
+  outline: 3px solid var(--sand);
+  outline-offset: 4px;
+}
+
+.shell {
+  width: min(calc(100% - 64px), var(--shell));
+  margin-inline: auto;
+}
+
+.section-pad {
+  padding-block: clamp(88px, 10vw, 150px);
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 999;
+  top: 12px;
+  right: 12px;
+  padding: 12px 18px;
+  border-radius: 4px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+  transform: translateY(-160%);
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header {
+  position: fixed;
+  z-index: 100;
+  inset: 0 0 auto;
+  border-bottom: 1px solid transparent;
+  color: var(--white);
+  transition: background 300ms ease, color 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.site-header.scrolled,
+.site-header:has(.mobile-nav.open) {
+  border-color: var(--line);
+  background: rgba(244, 241, 235, 0.94);
+  color: var(--ink);
+  box-shadow: 0 12px 40px rgba(20, 17, 12, 0.07);
+  backdrop-filter: blur(18px);
+}
+
+.header-inner {
+  min-height: var(--header-h);
+  display: grid;
+  grid-template-columns: 240px 1fr auto;
+  align-items: center;
+  gap: 28px;
+}
+
+.brand {
+  width: 202px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.brand img,
+.footer-brand img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter 300ms ease;
+}
+
+.site-header.scrolled .brand img,
+.site-header:has(.mobile-nav.open) .brand img,
+.footer-brand img {
+  filter: none;
+}
+
+.desktop-nav {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2vw, 34px);
+}
+
+.desktop-nav a {
+  position: relative;
+  padding-block: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 220ms ease;
+}
+
+.desktop-nav a:hover::after,
+.desktop-nav a.active::after {
+  transform: scaleX(1);
+}
+
+.header-cta,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 50px;
+  padding: 12px 21px;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  transition: transform 220ms ease, background 220ms ease, color 220ms ease;
+}
+
+.header-cta:hover,
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.header-cta {
+  min-height: 44px;
+  padding-inline: 18px;
+}
+
+.site-header:not(.scrolled) .header-cta {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--ink);
+}
+
+.site-header.scrolled .header-cta {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--white);
+}
+
+.menu-toggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  place-items: center;
+  align-content: center;
+  gap: 6px;
+}
+
+.menu-toggle span {
+  width: 18px;
+  height: 1px;
+  display: block;
+  background: currentColor;
+  transition: transform 220ms ease;
+}
+
+.menu-toggle[aria-expanded="true"] span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+.mobile-nav {
+  max-height: 0;
+  overflow: hidden;
+  border-top: 1px solid transparent;
+  background: var(--paper);
+  color: var(--ink);
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 340ms ease, opacity 200ms ease, visibility 200ms ease, border-color 200ms ease;
+}
+
+.mobile-nav.open {
+  max-height: calc(100vh - var(--header-h));
+  border-color: var(--line);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-inner {
+  display: grid;
+  padding-block: 18px 32px;
+}
+
+.mobile-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 14px;
+  border-bottom: 1px solid var(--line);
+  font-family: "Noto Kufi Arabic", "Cairo", sans-serif;
+  font-size: clamp(20px, 5vw, 30px);
+  font-weight: 600;
+}
+
+.mobile-nav .mobile-contact {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border: 0;
+  background: var(--ink);
+  color: var(--white);
+  font-family: "Cairo", sans-serif;
+  font-size: 13px;
+}
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(115deg, rgba(177, 138, 92, 0.14), transparent 36%),
+    repeating-linear-gradient(90deg, transparent 0, transparent calc(25% - 1px), rgba(255, 255, 255, 0.04) 25%);
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100svh - 116px);
+  padding-top: calc(var(--header-h) + 50px);
+  padding-bottom: 36px;
+  display: grid;
+  grid-template-columns: 0.84fr 1.16fr;
+  gap: clamp(38px, 6vw, 92px);
+  align-items: center;
+}
+
+.hero-copy {
+  max-width: 560px;
+  padding-block: 40px;
+}
+
+.kicker {
+  margin: 0 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 253, 248, 0.62);
+  direction: ltr;
+  justify-content: flex-end;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.kicker::before {
+  content: "";
+  width: 42px;
+  height: 1px;
+  background: var(--sand-light);
+}
+
+.kicker span {
+  color: var(--sand-light);
+}
+
+.hero h1,
+.section-heading h2,
+.about-statement h2,
+.portfolio-head h2,
+.contact-intro h2 {
+  margin: 0;
+  font-family: "Noto Kufi Arabic", "Cairo", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.055em;
+}
+
+.hero h1 {
+  max-width: 600px;
+  font-size: clamp(48px, 6.1vw, 92px);
+  line-height: 1.22;
+}
+
+.hero-lead {
+  max-width: 560px;
+  margin: 30px 0 0;
+  color: rgba(255, 253, 248, 0.72);
+  font-size: clamp(14px, 1.2vw, 17px);
+  line-height: 2;
+}
+
+.hero-actions {
+  margin-top: 34px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.button-dark {
+  border-color: var(--white);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.button-dark:hover {
+  background: transparent;
+  color: var(--white);
+}
+
+.button-light {
+  border-color: var(--white);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.button-light:hover {
+  background: transparent;
+  color: var(--white);
+}
+
+.text-link,
+.line-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid currentColor;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hero-visual {
+  position: relative;
+  height: min(72svh, 760px);
+  min-height: 500px;
+  overflow: hidden;
+  background: #37342e;
+  box-shadow: var(--shadow);
+}
+
+.hero-visual > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.2, 0.72, 0.2, 1);
+}
+
+.hero-visual:hover > img {
+  transform: scale(1.025);
+}
+
+.hero-image-wash {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(12, 11, 9, 0.72));
+}
+
+.hero-image-label {
+  position: absolute;
+  right: clamp(22px, 4vw, 48px);
+  bottom: clamp(22px, 4vw, 42px);
+}
+
+.hero-image-label span,
+.hero-image-label strong {
+  display: block;
+}
+
+.hero-image-label span {
+  color: var(--sand-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.hero-image-label strong {
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.hero-index {
+  position: absolute;
+  top: 24px;
+  left: 26px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.hero-meta {
+  position: relative;
+  z-index: 2;
+  min-height: 116px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line-light);
+}
+
+.hero-meta div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  padding: 22px 30px;
+  border-left: 1px solid var(--line-light);
+}
+
+.hero-meta div:last-child {
+  border-left: 0;
+}
+
+.hero-meta span {
+  color: var(--sand-light);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.hero-meta strong {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.section-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.section-mark::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+}
+
+.section-mark span:first-child {
+  color: var(--sand);
+}
+
+.section-mark.light {
+  color: rgba(255, 253, 248, 0.58);
+}
+
+.section-mark.light span:first-child {
+  color: var(--sand-light);
+}
+
+.about {
+  background: var(--paper);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.55fr 1.6fr 0.85fr;
+  gap: clamp(28px, 5vw, 76px);
+  align-items: start;
+}
+
+.about-statement h2,
+.section-heading h2,
+.portfolio-head h2,
+.contact-intro h2 {
+  font-size: clamp(40px, 4.6vw, 70px);
+  line-height: 1.34;
+}
+
+.about-statement em,
+.section-heading em,
+.portfolio-head em,
+.contact-intro em {
+  color: var(--sand);
+  font-style: normal;
+}
+
+.about-copy {
+  padding-top: 4px;
+}
+
+.about-copy p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2.05;
+}
+
+.about-copy .line-link {
+  margin-top: 18px;
+  color: var(--ink);
+}
+
+.services {
+  border-top: 1px solid var(--line);
+  background: var(--white);
+}
+
+.section-heading {
+  margin-bottom: 64px;
+  display: grid;
+  grid-template-columns: 0.55fr 2.45fr;
+  gap: clamp(28px, 5vw, 76px);
+}
+
+.section-heading > div:last-child {
+  display: grid;
+  grid-template-columns: 1.55fr 0.75fr;
+  gap: 50px;
+  align-items: end;
+}
+
+.section-heading p {
+  margin: 0 0 11px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.services-list {
+  border-top: 1px solid var(--line);
+}
+
+.service-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.42fr 0.95fr 1.35fr 48px;
+  gap: clamp(18px, 3vw, 50px);
+  align-items: center;
+  min-height: 150px;
+  padding-block: 28px;
+  border-bottom: 1px solid var(--line);
+  transition: padding-inline 260ms ease, background 260ms ease;
+}
+
+.service-row:hover {
+  padding-inline: 20px;
+  background: var(--paper);
+}
+
+.service-number {
+  color: var(--sand);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.service-row h3 {
+  margin: 0;
+  font-family: "Noto Kufi Arabic", "Cairo", sans-serif;
+  font-size: clamp(18px, 2vw, 27px);
+  line-height: 1.5;
+}
+
+.service-row p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.95;
+}
+
+.service-arrow {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 18px;
+  transition: transform 220ms ease, background 220ms ease, color 220ms ease;
+}
+
+.service-row:hover .service-arrow {
+  transform: rotate(-10deg);
+  background: var(--ink);
+  color: var(--white);
+}
+
+.portfolio {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.portfolio-head {
+  display: grid;
+  grid-template-columns: 0.55fr 1.2fr 0.8fr;
+  gap: clamp(28px, 5vw, 76px);
+  align-items: end;
+}
+
+.portfolio-head p {
+  margin: 0 0 12px;
+  color: rgba(255, 253, 248, 0.6);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.filter-bar {
+  margin: 64px 0 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.filter-button {
+  min-width: 86px;
+  padding: 10px 17px;
+  border: 1px solid var(--line-light);
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 253, 248, 0.7);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.filter-button:hover,
+.filter-button.active {
+  border-color: var(--white);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 150px;
+  grid-auto-flow: dense;
+  gap: 16px;
+}
+
+.project-card {
+  position: relative;
+  grid-column: span 4;
+  grid-row: span 3;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: #2f2d29;
+  color: var(--white);
+  text-align: right;
+  cursor: zoom-in;
+}
+
+.project-card.wide {
+  grid-column: span 8;
+}
+
+.project-card.tall {
+  grid-row: span 4;
+}
+
+.project-card[hidden] {
+  display: none;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 650ms cubic-bezier(0.2, 0.72, 0.2, 1), filter 300ms ease;
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 34%, rgba(10, 9, 8, 0.82));
+}
+
+.project-content {
+  position: absolute;
+  z-index: 2;
+  right: clamp(18px, 2.6vw, 34px);
+  bottom: clamp(18px, 2.6vw, 30px);
+  left: 70px;
+}
+
+.project-category,
+.project-content strong,
+.project-content small {
+  display: block;
+}
+
+.project-category {
+  color: var(--sand-light);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.project-content strong {
+  margin-top: 6px;
+  font-family: "Noto Kufi Arabic", "Cairo", sans-serif;
+  font-size: clamp(18px, 2vw, 27px);
+  line-height: 1.45;
+}
+
+.project-content small {
+  margin-top: 5px;
+  color: rgba(255, 253, 248, 0.68);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.project-open {
+  position: absolute;
+  z-index: 2;
+  left: 22px;
+  bottom: 22px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  font-size: 18px;
+  transition: transform 240ms ease, background 240ms ease, color 240ms ease;
+}
+
+.project-card:hover img,
+.project-card:focus-visible img {
+  transform: scale(1.04);
+  filter: saturate(1.04);
+}
+
+.project-card:hover .project-open,
+.project-card:focus-visible .project-open {
+  transform: rotate(-10deg);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.process {
+  background: var(--paper-deep);
+}
+
+.process .section-heading > div:last-child {
+  grid-template-columns: 1fr;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.process-card {
+  min-height: 290px;
+  padding: 36px 30px;
+  border-left: 1px solid var(--line);
+}
+
+.process-card:last-child {
+  border-left: 0;
+}
+
+.process-card > span {
+  color: var(--sand);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.process-card h3 {
+  margin: 72px 0 12px;
+  font-family: "Noto Kufi Arabic", "Cairo", sans-serif;
+  font-size: 25px;
+}
+
+.process-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.95;
+}
+
+.contact {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.contact::before {
+  content: "ARY";
+  position: absolute;
+  left: -2vw;
+  bottom: -13vw;
+  color: rgba(255, 255, 255, 0.025);
+  direction: ltr;
+  font-size: 31vw;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.contact-shell {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(50px, 9vw, 130px);
+  align-items: center;
+}
+
+.contact-intro .section-mark {
+  margin-bottom: 32px;
+}
+
+.contact-intro p {
+  max-width: 590px;
+  margin: 28px 0 0;
+  color: rgba(255, 253, 248, 0.66);
+  font-size: 13px;
+  line-height: 2.05;
+}
+
+.contact-intro .button {
+  margin-top: 32px;
+}
+
+.contact-cards {
+  border-top: 1px solid var(--line-light);
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 0.72fr 1.2fr 30px;
+  gap: 20px;
+  align-items: center;
+  min-height: 104px;
+  border-bottom: 1px solid var(--line-light);
+  transition: padding-inline 220ms ease, background 220ms ease;
+}
+
+.contact-row:hover {
+  padding-inline: 18px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.contact-label {
+  color: var(--sand-light);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.contact-row strong {
+  font-size: clamp(12px, 1.3vw, 16px);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.contact-row > span:last-child {
+  font-size: 18px;
+}
+
+.site-footer {
+  padding: 66px 0 26px;
+  background: var(--white);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 0.7fr 1.45fr 0.55fr;
+  gap: clamp(30px, 5vw, 80px);
+  align-items: center;
+  padding-bottom: 56px;
+}
+
+.footer-brand {
+  width: 220px;
+  height: 90px;
+  overflow: hidden;
+}
+
+.footer-top p {
+  max-width: 580px;
+  margin: 0;
+  color: var(--muted);
+  font-family: "Noto Kufi Arabic", "Cairo", sans-serif;
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 1.7;
+}
+
+.footer-nav {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+}
+
+.footer-nav a {
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.footer-nav a:hover {
+  border-color: currentColor;
+  color: var(--ink);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.footer-bottom small {
+  font-size: 10px;
+}
+
+.floating-whatsapp {
+  position: fixed;
+  z-index: 75;
+  left: 22px;
+  bottom: 22px;
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: #1c9b5f;
+  color: #fff;
+  box-shadow: 0 14px 34px rgba(10, 52, 33, 0.26);
+  font-size: 11px;
+  font-weight: 800;
+  transition: transform 220ms ease;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-3px);
+}
+
+.floating-whatsapp span:first-child {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  direction: ltr;
+  font-size: 9px;
+}
+
+.project-dialog {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: clamp(18px, 4vw, 54px);
+  border: 0;
+  background: rgba(13, 12, 10, 0.94);
+  color: var(--white);
+}
+
+.project-dialog::backdrop {
+  background: rgba(13, 12, 10, 0.9);
+  backdrop-filter: blur(12px);
+}
+
+.dialog-shell {
+  position: relative;
+  width: min(1220px, 100%);
+  height: 100%;
+  margin-inline: auto;
+  display: grid;
+  place-items: center;
+}
+
+.dialog-shell figure {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
+.dialog-media {
+  min-height: 0;
+  display: grid;
+  place-items: center;
+}
+
+.dialog-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dialog-shell figcaption {
+  padding: 20px 76px 0;
+  text-align: center;
+}
+
+.dialog-shell figcaption > span {
+  color: var(--sand-light);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.dialog-shell figcaption h2 {
+  margin: 4px 0 0;
+  font-family: "Noto Kufi Arabic", "Cairo", sans-serif;
+  font-size: clamp(19px, 2.5vw, 30px);
+}
+
+.dialog-shell figcaption p {
+  margin: 5px 0 0;
+  color: rgba(255, 253, 248, 0.62);
+  font-size: 11px;
+}
+
+.dialog-close,
+.dialog-arrow {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: rgba(20, 19, 17, 0.62);
+  color: var(--white);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.dialog-close:hover,
+.dialog-arrow:hover {
+  background: var(--white);
+  color: var(--ink);
+}
+
+.dialog-close {
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  font-size: 26px;
+}
+
+.dialog-arrow {
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 26px;
+  transform: translateY(-50%);
+}
+
+.dialog-prev {
+  right: 0;
+}
+
+.dialog-next {
+  left: 0;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(0.2, 0.72, 0.2, 1);
+}
+
+.js .reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 1120px) {
+  .header-inner {
+    grid-template-columns: 190px 1fr auto;
+  }
+
+  .brand {
+    width: 180px;
+    height: 64px;
+  }
+
+  .desktop-nav {
+    gap: 16px;
+  }
+
+  .desktop-nav a {
+    font-size: 11px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 42px;
+  }
+
+  .about-grid,
+  .portfolio-head {
+    grid-template-columns: 0.4fr 1.35fr 0.85fr;
+  }
+
+  .service-row {
+    grid-template-columns: 0.25fr 0.9fr 1.35fr 44px;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --header-h: 76px;
+  }
+
+  .shell {
+    width: min(calc(100% - 40px), var(--shell));
+  }
+
+  .header-inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .brand {
+    width: 176px;
+    height: 58px;
+  }
+
+  .desktop-nav,
+  .header-cta {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: grid;
+  }
+
+  .hero-grid {
+    min-height: auto;
+    padding-top: calc(var(--header-h) + 46px);
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .hero-copy {
+    max-width: 680px;
+    padding: 44px 0 0;
+  }
+
+  .hero-visual {
+    height: min(62svh, 620px);
+  }
+
+  .hero-meta {
+    min-height: 100px;
+  }
+
+  .hero-meta div {
+    padding-inline: 16px;
+  }
+
+  .about-grid {
+    grid-template-columns: 0.4fr 1.6fr;
+  }
+
+  .about-copy {
+    grid-column: 2;
+  }
+
+  .section-heading {
+    grid-template-columns: 0.4fr 1.6fr;
+  }
+
+  .section-heading > div:last-child {
+    grid-template-columns: 1fr;
+  }
+
+  .service-row {
+    grid-template-columns: 0.2fr 0.8fr 1.2fr 42px;
+  }
+
+  .portfolio-head {
+    grid-template-columns: 0.4fr 1.6fr;
+  }
+
+  .portfolio-head p {
+    grid-column: 2;
+  }
+
+  .project-card,
+  .project-card.wide {
+    grid-column: span 6;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-card:nth-child(2) {
+    border-left: 0;
+  }
+
+  .process-card:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .contact-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1.4fr;
+  }
+
+  .footer-nav {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 620px) {
+  .shell {
+    width: min(calc(100% - 28px), var(--shell));
+  }
+
+  .section-pad {
+    padding-block: 76px;
+  }
+
+  .hero-grid {
+    padding-top: calc(var(--header-h) + 28px);
+  }
+
+  .hero-copy {
+    padding-top: 32px;
+  }
+
+  .kicker {
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    font-size: 8px;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 13vw, 64px);
+  }
+
+  .hero-lead {
+    margin-top: 22px;
+    font-size: 13px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .text-link {
+    align-self: flex-start;
+  }
+
+  .hero-visual {
+    height: 54svh;
+    min-height: 390px;
+  }
+
+  .hero-meta {
+    grid-template-columns: 1fr;
+    padding-block: 10px;
+  }
+
+  .hero-meta div {
+    min-height: 78px;
+    border-left: 0;
+    border-bottom: 1px solid var(--line-light);
+  }
+
+  .hero-meta div:last-child {
+    border-bottom: 0;
+  }
+
+  .about-grid,
+  .section-heading,
+  .portfolio-head {
+    grid-template-columns: 1fr;
+  }
+
+  .about-copy,
+  .portfolio-head p {
+    grid-column: auto;
+  }
+
+  .about-statement h2,
+  .section-heading h2,
+  .portfolio-head h2,
+  .contact-intro h2 {
+    font-size: clamp(34px, 10.5vw, 50px);
+  }
+
+  .section-heading,
+  .portfolio-head {
+    gap: 28px;
+    margin-bottom: 42px;
+  }
+
+  .service-row {
+    grid-template-columns: 36px 1fr 40px;
+    gap: 12px;
+    padding-block: 24px;
+  }
+
+  .service-row h3 {
+    font-size: 18px;
+  }
+
+  .service-row p {
+    grid-column: 2 / -1;
+  }
+
+  .filter-bar {
+    margin-top: 36px;
+  }
+
+  .project-grid {
+    grid-auto-rows: 112px;
+    gap: 10px;
+  }
+
+  .project-card,
+  .project-card.wide,
+  .project-card.tall {
+    grid-column: span 12;
+    grid-row: span 3;
+  }
+
+  .project-card.tall {
+    grid-row: span 4;
+  }
+
+  .project-content small {
+    display: none;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card,
+  .process-card:nth-child(2) {
+    min-height: 230px;
+    border-left: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .process-card:last-child {
+    border-bottom: 0;
+  }
+
+  .process-card h3 {
+    margin-top: 44px;
+  }
+
+  .contact-row {
+    grid-template-columns: 1fr 28px;
+    gap: 8px 14px;
+    min-height: 118px;
+  }
+
+  .contact-row strong {
+    grid-column: 1;
+  }
+
+  .contact-row > span:last-child {
+    grid-row: 1 / 3;
+    grid-column: 2;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    padding-bottom: 38px;
+  }
+
+  .footer-nav {
+    grid-column: auto;
+    grid-template-columns: repeat(3, auto);
+    gap: 22px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .floating-whatsapp {
+    left: 14px;
+    bottom: 14px;
+  }
+
+  .floating-whatsapp span:last-child {
+    display: none;
+  }
+
+  .floating-whatsapp {
+    width: 50px;
+    padding: 7px;
+  }
+
+  .dialog-shell figcaption {
+    padding-inline: 0;
+  }
+
+  .dialog-arrow {
+    top: auto;
+    bottom: 64px;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+</head>
+<body>
+<link rel="preload" as="image" href="assets/ary-logo.png"/><link rel="preload" as="image" href="assets/hero-commercial-complex.webp" fetchPriority="high"/><a class="skip-link" href="#main-content">الانتقال إلى المحتوى</a><header class="site-header" data-header="true"><div class="shell header-inner"><a class="brand" href="#top" aria-label="أري الأولى — الصفحة الرئيسية"><img src="assets/ary-logo.png" alt="أري الأولى للاستشارات الهندسية" width="1472" height="757"/></a><nav class="desktop-nav" aria-label="التنقل الرئيسي"><a href="#about">عن أري</a><a href="#services">الخدمات</a><a href="#portfolio">المشاريع</a><a href="#process">منهجية العمل</a><a href="#contact">تواصل معنا</a></nav><a class="header-cta" href="https://wa.me/966563110322?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9%20%D9%85%D9%86%20%D8%B4%D8%B1%D9%83%D8%A9%20%D8%A3%D8%B1%D9%8A%20%D8%A7%D9%84%D8%A3%D9%88%D9%84%D9%89." target="_blank" rel="noopener noreferrer"><span>طلب استشارة</span><span aria-hidden="true">↗</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="فتح القائمة" data-menu-toggle="true"><span></span><span></span></button></div><nav class="mobile-nav" id="mobile-nav" aria-label="قائمة الجوال" data-mobile-nav="true"><div class="shell mobile-nav-inner"><a href="#about">عن أري</a><a href="#services">الخدمات</a><a href="#portfolio">المشاريع</a><a href="#process">منهجية العمل</a><a href="#contact">تواصل معنا</a><a class="mobile-contact" href="https://wa.me/966563110322?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9%20%D9%85%D9%86%20%D8%B4%D8%B1%D9%83%D8%A9%20%D8%A3%D8%B1%D9%8A%20%D8%A7%D9%84%D8%A3%D9%88%D9%84%D9%89." target="_blank" rel="noopener noreferrer">ابدأ مشروعك معنا<span aria-hidden="true">↗</span></a></div></nav></header><main id="main-content"><section class="hero" id="top" aria-labelledby="hero-title"><div class="hero-backdrop" aria-hidden="true"></div><div class="shell hero-grid"><div class="hero-copy reveal"><p class="kicker"><span>ARY</span> Engineering Consultancy</p><h1 id="hero-title">نصمّم أثرًا<br/>يتجاوز المكان.</h1><p class="hero-lead">حلول معمارية وهندسية متكاملة، نصنعها بفكر معاصر، دقة تنفيذية، وفهم عميق لهوية المدينة المنورة.</p><div class="hero-actions"><a class="button button-dark" href="#portfolio">استكشف مشاريعنا <span aria-hidden="true">←</span></a><a class="text-link" href="#about">تعرّف علينا <span aria-hidden="true">↓</span></a></div></div><div class="hero-visual reveal"><img src="assets/hero-commercial-complex.webp" alt="مجمع تجاري بتصميم شركة أري الأولى" width="1920" height="1080" fetchPriority="high"/><div class="hero-image-wash" aria-hidden="true"></div><div class="hero-image-label"><span>مشروع مختار</span><strong>تطوير تجاري متكامل</strong></div><div class="hero-index" aria-hidden="true">01</div></div></div><div class="shell hero-meta reveal" aria-label="مجالات خبرتنا"><div><span>نطاق العمل</span><strong>تصميم معماري وداخلي</strong></div><div><span>التخصصات</span><strong>سكني · تجاري · فندقي</strong></div><div><span>الموقع</span><strong>المدينة المنورة، السعودية</strong></div></div></section><section class="about section-pad" id="about" aria-labelledby="about-title"><div class="shell about-grid"><div class="section-mark reveal"><span>01</span><span>عن أري</span></div><div class="about-statement reveal"><h2 id="about-title">نحوّل الفكرة إلى مشروع<br/><em>واضح، متوازن، وقابل للتنفيذ.</em></h2></div><div class="about-copy reveal"><p>في أري الأولى للاستشارات الهندسية نرى أن التصميم الناجح يبدأ بالفهم. ندرس احتياجات العميل، طبيعة الموقع، ووظيفة المشروع قبل أن نرسم خطه الأول.</p><p>نطوّر حلولًا تجمع الحس الإبداعي بالدقة الهندسية، ونعتني بكل تفصيل من الفكرة وحتى المخرجات التنفيذية.</p><a class="line-link" href="#contact">ناقش مشروعك معنا <span aria-hidden="true">↗</span></a></div></div></section><section class="services section-pad" id="services" aria-labelledby="services-title"><div class="shell"><div class="section-heading reveal"><div class="section-mark"><span>02</span><span>خدماتنا</span></div><div><h2 id="services-title">خبرة متكاملة.<br/><em>حل واحد متّسق.</em></h2><p>ندير العلاقة بين الفكرة والجمال والوظيفة والتنفيذ ضمن رؤية واحدة للمشروع.</p></div></div><div class="services-list"><article class="service-row reveal"><span class="service-number">01</span><h3>التصميم المعماري</h3><p>حلول معمارية مدروسة تجمع كفاءة المخطط، وضوح الفكرة، وجمال الهوية بما يلائم احتياج المشروع وموقعه.</p><span class="service-arrow" aria-hidden="true">↗</span></article><article class="service-row reveal"><span class="service-number">02</span><h3>التصميم الداخلي</h3><p>مساحات متكاملة تحوّل الوظيفة إلى تجربة، مع عناية دقيقة بالمواد، الإضاءة، الأثاث، وتفاصيل التنفيذ.</p><span class="service-arrow" aria-hidden="true">↗</span></article><article class="service-row reveal"><span class="service-number">03</span><h3>المخططات التنفيذية</h3><p>وثائق ورسومات واضحة وقابلة للتنفيذ، بتنسيق محكم بين التخصصات وتقليل التعارضات قبل بدء الأعمال.</p><span class="service-arrow" aria-hidden="true">↗</span></article><article class="service-row reveal"><span class="service-number">04</span><h3>الواجهات والهوية</h3><p>تطوير واجهات سكنية وتجارية وفندقية تستلهم هوية المكان وتمنح المشروع حضورًا معماريًا مميزًا.</p><span class="service-arrow" aria-hidden="true">↗</span></article><article class="service-row reveal"><span class="service-number">05</span><h3>الإظهار المعماري</h3><p>مناظير واقعية وعروض بصرية دقيقة تساعد على تصور المشروع، تقييم الخيارات، واتخاذ القرار بثقة.</p><span class="service-arrow" aria-hidden="true">↗</span></article><article class="service-row reveal"><span class="service-number">06</span><h3>الإشراف والاستشارات</h3><p>متابعة فنية واستشارات هندسية تدعم جودة التنفيذ وتحافظ على الفكرة التصميمية في كل مرحلة.</p><span class="service-arrow" aria-hidden="true">↗</span></article></div></div></section><section class="portfolio section-pad" id="portfolio" aria-labelledby="portfolio-title"><div class="shell"><div class="portfolio-head reveal"><div class="section-mark light"><span>03</span><span>مشاريع مختارة</span></div><h2 id="portfolio-title">أعمال تعبّر<br/><em>عن المكان.</em></h2><p>مجموعة من المشاريع السكنية والتجارية والفندقية، تعكس تنوع الحلول واهتمامنا بالهوية والتفاصيل.</p></div><div class="filter-bar reveal" role="group" aria-label="تصفية المشاريع"><button type="button" class="filter-button active" data-filter="all" aria-pressed="true">الكل</button><button type="button" class="filter-button" data-filter="residential" aria-pressed="false">سكني</button><button type="button" class="filter-button" data-filter="commercial" aria-pressed="false">تجاري</button><button type="button" class="filter-button" data-filter="hospitality" aria-pressed="false">فندقي</button></div><div class="project-grid" aria-live="polite"><button class="project-card wide reveal" type="button" data-project="true" data-category="commercial" data-image="assets/drive-through-storefront.webp" data-title="مشروع درايف ثرو" data-description="واجهة تجارية بطابع معماري معاصر" data-category-label="تجاري" aria-label="عرض مشروع مشروع درايف ثرو"><img src="assets/drive-through-storefront.webp" alt="" width="1600" height="1067" loading="lazy" decoding="async"/><span class="project-overlay" aria-hidden="true"></span><span class="project-content"><span class="project-category">تجاري</span><strong>مشروع درايف ثرو</strong><small>واجهة تجارية بطابع معماري معاصر</small></span><span class="project-open" aria-hidden="true">↗</span></button><button class="project-card standard reveal" type="button" data-project="true" data-category="commercial" data-image="assets/drive-through-aerial.webp" data-title="مركز تجاري مفتوح" data-description="تكوين معماري متكامل مع الحركة والمواقف" data-category-label="تجاري" aria-label="عرض مشروع مركز تجاري مفتوح"><img src="assets/drive-through-aerial.webp" alt="" width="1600" height="838" loading="lazy" decoding="async"/><span class="project-overlay" aria-hidden="true"></span><span class="project-content"><span class="project-category">تجاري</span><strong>مركز تجاري مفتوح</strong><small>تكوين معماري متكامل مع الحركة والمواقف</small></span><span class="project-open" aria-hidden="true">↗</span></button><button class="project-card tall reveal" type="button" data-project="true" data-category="residential" data-image="assets/residential-tower.webp" data-title="عمارة سكنية" data-description="واجهة مدينية معاصرة بخامات طبيعية" data-category-label="سكني" aria-label="عرض مشروع عمارة سكنية"><img src="assets/residential-tower.webp" alt="" width="1536" height="1920" loading="lazy" decoding="async"/><span class="project-overlay" aria-hidden="true"></span><span class="project-content"><span class="project-category">سكني</span><strong>عمارة سكنية</strong><small>واجهة مدينية معاصرة بخامات طبيعية</small></span><span class="project-open" aria-hidden="true">↗</span></button><button class="project-card standard reveal" type="button" data-project="true" data-category="residential" data-image="assets/madinah-apartment.webp" data-title="شقق سكنية" data-description="حجر وبازلت ورواشين بتفاصيل متوازنة" data-category-label="سكني" aria-label="عرض مشروع شقق سكنية"><img src="assets/madinah-apartment.webp" alt="" width="1114" height="1122" loading="lazy" decoding="async"/><span class="project-overlay" aria-hidden="true"></span><span class="project-content"><span class="project-category">سكني</span><strong>شقق سكنية</strong><small>حجر وبازلت ورواشين بتفاصيل متوازنة</small></span><span class="project-open" aria-hidden="true">↗</span></button><button class="project-card tall reveal" type="button" data-project="true" data-category="hospitality" data-image="assets/boutique-hotel.webp" data-title="فندق بوتيك" data-description="إيقاع رأسي وإضاءة معمارية دافئة" data-category-label="فندقي" aria-label="عرض مشروع فندق بوتيك"><img src="assets/boutique-hotel.webp" alt="" width="1280" height="1920" loading="lazy" decoding="async"/><span class="project-overlay" aria-hidden="true"></span><span class="project-content"><span class="project-category">فندقي</span><strong>فندق بوتيك</strong><small>إيقاع رأسي وإضاءة معمارية دافئة</small></span><span class="project-open" aria-hidden="true">↗</span></button><button class="project-card standard reveal" type="button" data-project="true" data-category="residential" data-image="assets/madinah-villa.webp" data-title="فيلا سكنية" data-description="واجهة مستلهمة من الهوية المحلية" data-category-label="سكني" aria-label="عرض مشروع فيلا سكنية"><img src="assets/madinah-villa.webp" alt="" width="1600" height="1067" loading="lazy" decoding="async"/><span class="project-overlay" aria-hidden="true"></span><span class="project-content"><span class="project-category">سكني</span><strong>فيلا سكنية</strong><small>واجهة مستلهمة من الهوية المحلية</small></span><span class="project-open" aria-hidden="true">↗</span></button><button class="project-card wide reveal" type="button" data-project="true" data-category="residential" data-image="assets/contemporary-villa.webp" data-title="فيلا معاصرة" data-description="خامات هادئة وتفاصيل زخرفية دقيقة" data-category-label="سكني" aria-label="عرض مشروع فيلا معاصرة"><img src="assets/contemporary-villa.webp" alt="" width="1600" height="900" loading="lazy" decoding="async"/><span class="project-overlay" aria-hidden="true"></span><span class="project-content"><span class="project-category">سكني</span><strong>فيلا معاصرة</strong><small>خامات هادئة وتفاصيل زخرفية دقيقة</small></span><span class="project-open" aria-hidden="true">↗</span></button><button class="project-card wide reveal" type="button" data-project="true" data-category="commercial" data-image="assets/commercial-complex.webp" data-title="مجمع محلات تجارية" data-description="تصميم متكامل للمباني وتنسيق الموقع" data-category-label="تجاري" aria-label="عرض مشروع مجمع محلات تجارية"><img src="assets/commercial-complex.webp" alt="" width="1600" height="900" loading="lazy" decoding="async"/><span class="project-overlay" aria-hidden="true"></span><span class="project-content"><span class="project-category">تجاري</span><strong>مجمع محلات تجارية</strong><small>تصميم متكامل للمباني وتنسيق الموقع</small></span><span class="project-open" aria-hidden="true">↗</span></button><button class="project-card tall reveal" type="button" data-project="true" data-category="hospitality" data-image="assets/urban-hotel.webp" data-title="فندق حضري" data-description="واجهة رأسية حديثة بتكوين مميز" data-category-label="فندقي" aria-label="عرض مشروع فندق حضري"><img src="assets/urban-hotel.webp" alt="" width="720" height="1280" loading="lazy" decoding="async"/><span class="project-overlay" aria-hidden="true"></span><span class="project-content"><span class="project-category">فندقي</span><strong>فندق حضري</strong><small>واجهة رأسية حديثة بتكوين مميز</small></span><span class="project-open" aria-hidden="true">↗</span></button><button class="project-card standard reveal" type="button" data-project="true" data-category="residential" data-image="assets/residential-villa-night.webp" data-title="فيلا سكنية" data-description="منظور ليلي وإضاءة معمارية متوازنة" data-category-label="سكني" aria-label="عرض مشروع فيلا سكنية"><img src="assets/residential-villa-night.webp" alt="" width="1448" height="1086" loading="lazy" decoding="async"/><span class="project-overlay" aria-hidden="true"></span><span class="project-content"><span class="project-category">سكني</span><strong>فيلا سكنية</strong><small>منظور ليلي وإضاءة معمارية متوازنة</small></span><span class="project-open" aria-hidden="true">↗</span></button><button class="project-card standard reveal" type="button" data-project="true" data-category="residential" data-image="assets/madinah-style-villa.webp" data-title="فيلا بالطراز المديني" data-description="كتلة معاصرة تستلهم عمارة المدينة" data-category-label="سكني" aria-label="عرض مشروع فيلا بالطراز المديني"><img src="assets/madinah-style-villa.webp" alt="" width="1402" height="1122" loading="lazy" decoding="async"/><span class="project-overlay" aria-hidden="true"></span><span class="project-content"><span class="project-category">سكني</span><strong>فيلا بالطراز المديني</strong><small>كتلة معاصرة تستلهم عمارة المدينة</small></span><span class="project-open" aria-hidden="true">↗</span></button><button class="project-card wide reveal" type="button" data-project="true" data-category="residential" data-image="assets/contemporary-villa-basalt.webp" data-title="فيلا البازلت" data-description="تباين أنيق بين الحجر الأبيض والبازلت" data-category-label="سكني" aria-label="عرض مشروع فيلا البازلت"><img src="assets/contemporary-villa-basalt.webp" alt="" width="1448" height="1086" loading="lazy" decoding="async"/><span class="project-overlay" aria-hidden="true"></span><span class="project-content"><span class="project-category">سكني</span><strong>فيلا البازلت</strong><small>تباين أنيق بين الحجر الأبيض والبازلت</small></span><span class="project-open" aria-hidden="true">↗</span></button></div></div></section><section class="process section-pad" id="process" aria-labelledby="process-title"><div class="shell"><div class="section-heading reveal"><div class="section-mark"><span>04</span><span>منهجية العمل</span></div><div><h2 id="process-title">مسار واضح<br/><em>من الفكرة إلى الإنجاز.</em></h2></div></div><div class="process-grid"><article class="process-card reveal"><span>01</span><h3>نستمع</h3><p>نفهم طبيعة المشروع، أهدافه، ومتطلباتك بدقة.</p></article><article class="process-card reveal"><span>02</span><h3>نحلّل</h3><p>ندرس الموقع والبرنامج والفرص والقيود قبل التصميم.</p></article><article class="process-card reveal"><span>03</span><h3>نصمّم</h3><p>نطوّر الفكرة ونختبر البدائل وصولًا إلى الحل الأنسب.</p></article><article class="process-card reveal"><span>04</span><h3>نُنجز</h3><p>نحوّل التصميم إلى مخرجات واضحة تدعم التنفيذ بثقة.</p></article></div></div></section><section class="contact section-pad" id="contact" aria-labelledby="contact-title"><div class="shell contact-shell"><div class="contact-intro reveal"><div class="section-mark light"><span>05</span><span>تواصل معنا</span></div><h2 id="contact-title">لديك مشروع؟<br/><em>لنبدأ الحديث.</em></h2><p>أرسل لنا نبذة عن مشروعك، الموقع، ونوع الخدمة المطلوبة. سنتواصل معك لفهم الاحتياج واقتراح الخطوة الأنسب.</p><a class="button button-light" href="https://wa.me/966563110322?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9%20%D9%85%D9%86%20%D8%B4%D8%B1%D9%83%D8%A9%20%D8%A3%D8%B1%D9%8A%20%D8%A7%D9%84%D8%A3%D9%88%D9%84%D9%89." target="_blank" rel="noopener noreferrer">ابدأ عبر واتساب <span aria-hidden="true">↗</span></a></div><div class="contact-cards reveal"><a class="contact-row" href="tel:+966563110322"><span class="contact-label">اتصال مباشر</span><strong dir="ltr">+966 56 311 0322</strong><span aria-hidden="true">↗</span></a><a class="contact-row" href="tel:+966581607016"><span class="contact-label">رقم إضافي</span><strong dir="ltr">+966 58 160 7016</strong><span aria-hidden="true">↗</span></a><a class="contact-row" href="mailto:ary1consult@gmail.com"><span class="contact-label">البريد الإلكتروني</span><strong dir="ltr">ary1consult@gmail.com</strong><span aria-hidden="true">↗</span></a><a class="contact-row" href="https://maps.app.goo.gl/NVrWLvPVU8QQjUFi6" target="_blank" rel="noopener noreferrer"><span class="contact-label">موقع الشركة</span><strong>المدينة المنورة، السعودية</strong><span aria-hidden="true">↗</span></a></div></div></section></main><footer class="site-footer"><div class="shell footer-top"><a class="footer-brand" href="#top" aria-label="العودة إلى أعلى الصفحة"><img src="assets/ary-logo.png" alt="أري الأولى للاستشارات الهندسية" width="1472" height="757" loading="lazy"/></a><p>نصمّم حلولًا معمارية وهندسية تصنع أثرًا واضحًا ومستدامًا.</p><div class="footer-nav" aria-label="روابط سريعة"><a href="#services">الخدمات</a><a href="#portfolio">المشاريع</a><a href="#contact">التواصل</a></div></div><div class="shell footer-bottom"><small>© <span data-year="true">2026</span> أري الأولى للاستشارات الهندسية. جميع الحقوق محفوظة.</small><small dir="ltr">Madinah · Saudi Arabia</small></div></footer><a class="floating-whatsapp" href="https://wa.me/966563110322?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9%20%D9%85%D9%86%20%D8%B4%D8%B1%D9%83%D8%A9%20%D8%A3%D8%B1%D9%8A%20%D8%A7%D9%84%D8%A3%D9%88%D9%84%D9%89." target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر واتساب"><span aria-hidden="true">WA</span><span>واتساب</span></a><dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-shell"><button class="dialog-close" type="button" data-dialog-close="true" aria-label="إغلاق المعرض">×</button><button class="dialog-arrow dialog-prev" type="button" data-dialog-prev="true" aria-label="المشروع السابق">›</button><figure><div class="dialog-media"><img data-dialog-image="true" src="assets/hero-commercial-complex.webp" alt=""/></div><figcaption><span data-dialog-category="true">مشروع</span><h2 id="dialog-title" data-dialog-title="true">مشروع أري</h2><p data-dialog-description="true"></p></figcaption></figure><button class="dialog-arrow dialog-next" type="button" data-dialog-next="true" aria-label="المشروع التالي">‹</button></div></dialog><script>
+window.addEventListener('load', () => {
+  const root = document.documentElement;
+  root.classList.add('js');
+
+  const header = document.querySelector('[data-header]');
+  const menuToggle = document.querySelector('[data-menu-toggle]');
+  const mobileNav = document.querySelector('[data-mobile-nav]');
+  const mobileLinks = mobileNav ? [...mobileNav.querySelectorAll('a')] : [];
+
+  const closeMenu = () => {
+    if (!menuToggle || !mobileNav) return;
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'فتح القائمة');
+    mobileNav.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  };
+
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'فتح القائمة' : 'إغلاق القائمة');
+    mobileNav?.classList.toggle('open', !isOpen);
+    document.body.classList.toggle('menu-open', !isOpen);
+  });
+  mobileLinks.forEach((link) => link.addEventListener('click', closeMenu));
+
+  const syncHeader = () => header?.classList.toggle('scrolled', window.scrollY > 24);
+  syncHeader();
+  window.addEventListener('scroll', syncHeader, { passive: true });
+
+  document.querySelectorAll('[data-year]').forEach((node) => {
+    node.textContent = String(new Date().getFullYear());
+  });
+
+  const filterButtons = [...document.querySelectorAll('[data-filter]')];
+  const projectCards = [...document.querySelectorAll('[data-project]')];
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      filterButtons.forEach((item) => {
+        const active = item === button;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      projectCards.forEach((card) => {
+        card.hidden = filter !== 'all' && card.dataset.category !== filter;
+      });
+    });
+  });
+
+  const dialog = document.getElementById('project-dialog');
+  const dialogImage = dialog?.querySelector('[data-dialog-image]');
+  const dialogTitle = dialog?.querySelector('[data-dialog-title]');
+  const dialogDescription = dialog?.querySelector('[data-dialog-description]');
+  const dialogCategory = dialog?.querySelector('[data-dialog-category]');
+  let currentIndex = 0;
+  let opener = null;
+
+  const visibleProjects = () => projectCards.filter((card) => !card.hidden);
+  const renderProject = (card) => {
+    if (!card || !dialogImage || !dialogTitle || !dialogDescription || !dialogCategory) return;
+    dialogImage.src = card.dataset.image || '';
+    dialogImage.alt = card.dataset.title || '';
+    dialogTitle.textContent = card.dataset.title || '';
+    dialogDescription.textContent = card.dataset.description || '';
+    dialogCategory.textContent = card.dataset.categoryLabel || '';
+    currentIndex = visibleProjects().indexOf(card);
+  };
+
+  const moveProject = (step) => {
+    const list = visibleProjects();
+    if (!list.length) return;
+    currentIndex = (currentIndex + step + list.length) % list.length;
+    renderProject(list[currentIndex]);
+  };
+
+  projectCards.forEach((card) => card.addEventListener('click', () => {
+    if (!dialog) return;
+    opener = card;
+    renderProject(card);
+    dialog.showModal();
+    document.body.classList.add('dialog-open');
+  }));
+
+  dialog?.querySelector('[data-dialog-close]')?.addEventListener('click', () => dialog.close());
+  dialog?.querySelector('[data-dialog-prev]')?.addEventListener('click', () => moveProject(-1));
+  dialog?.querySelector('[data-dialog-next]')?.addEventListener('click', () => moveProject(1));
+  dialog?.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog?.addEventListener('close', () => {
+    document.body.classList.remove('dialog-open');
+    opener?.focus();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && mobileNav?.classList.contains('open')) closeMenu();
+    if (!dialog?.open) return;
+    if (event.key === 'ArrowRight') moveProject(-1);
+    if (event.key === 'ArrowLeft') moveProject(1);
+  });
+
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -45px' });
+    document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+  } else {
+    document.querySelectorAll('.reveal').forEach((element) => element.classList.add('revealed'));
+  }
+
+  const sections = [...document.querySelectorAll('main section[id]')];
+  const navLinks = [...document.querySelectorAll('.desktop-nav a[href^="#"]')];
+  if ('IntersectionObserver' in window) {
+    const navObserver = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      navLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === '#' + visible.target.id));
+    }, { rootMargin: '-25% 0px -60%', threshold: [0.02, 0.25] });
+    sections.forEach((section) => navObserver.observe(section));
+  }
+}, { once: true });
+</script>
+</body>
+</html>
