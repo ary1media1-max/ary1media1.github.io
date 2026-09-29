@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><title>إدارة مشاريع أري</title>
+  <style>
+    :root{--ink:#171613;--gold:#b28a52;--paper:#f4f1ea;--line:#d8d1c4;--danger:#9b2c2c}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,Arial,sans-serif}.shell{width:min(940px,calc(100% - 32px));margin:auto}header{background:#171613;color:#fff;padding:28px 0}header .shell{display:flex;justify-content:space-between;align-items:center}h1{font-size:24px;margin:0}header a{color:#fff}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin:24px 0;box-shadow:0 14px 34px #0000000b}h2{margin-top:0;font-size:20px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.full{grid-column:1/-1}label{display:grid;gap:7px;font-weight:700;font-size:14px}input,select,textarea,button{font:inherit}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px;background:#fff}textarea{min-height:100px;resize:vertical}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}button{border:0;border-radius:10px;padding:12px 18px;cursor:pointer;font-weight:700}.primary{background:var(--ink);color:#fff}.secondary{background:#e9e3d8}.danger{background:#f8dddd;color:var(--danger)}.status{margin-top:14px;padding:12px;border-radius:10px;background:#eee;display:none}.status.show{display:block}.projects{display:grid;gap:10px}.project{display:flex;align-items:center;gap:12px;border:1px solid var(--line);padding:10px;border-radius:12px}.project img{width:76px;height:58px;object-fit:cover;border-radius:8px}.project div{flex:1}.project strong,.project small{display:block}.setup-note{color:#625d54;font-size:14px;line-height:1.8}#manager[hidden],#setup[hidden]{display:none}@media(max-width:650px){.grid{grid-template-columns:1fr}.full{grid-column:auto}.project{align-items:flex-start}header .shell{align-items:flex-start}}
+  </style>
+</head>
+<body>
+<header><div class="shell"><h1>إدارة مشاريع أري</h1><a href="./">فتح الموقع</a></div></header>
+<main class="shell">
+  <section class="card" id="setup">
+    <h2>الربط الآمن — مرة واحدة فقط</h2>
+    <p class="setup-note">أنشئ مفتاح وصول دقيق من GitHub بصلاحية <b>Contents: Read and write</b> لهذا المستودع فقط. سيُشفّر المفتاح داخل هذا الجهاز بكلمة المرور التي تختارها، ولن يُكتب داخل ملفات الموقع.</p>
+    <div class="grid"><label>مفتاح GitHub<input id="token" type="password" autocomplete="off"></label><label>كلمة مرور اللوحة<input id="new-password" type="password" minlength="8" autocomplete="new-password"></label></div>
+    <div class="actions"><button class="primary" id="save-setup">حفظ الربط</button></div>
+  </section>
+  <section class="card" id="unlock" hidden><h2>تسجيل الدخول</h2><div class="grid"><label>كلمة المرور<input id="password" type="password" autocomplete="current-password"></label></div><div class="actions"><button class="primary" id="login">دخول</button><button class="secondary" id="reset">إعادة ضبط الربط</button></div></section>
+  <div id="manager" hidden>
+    <section class="card"><h2>إضافة مشروع جديد</h2><form id="project-form"><div class="grid"><label>اسم المشروع<input name="title" required></label><label>التصنيف<select name="category"><option value="residential">سكني</option><option value="commercial">تجاري</option><option value="hospitality">فندقي</option><option value="interior">تصميم داخلي</option></select></label><label class="full">وصف مختصر<textarea name="description" required></textarea></label><label class="full">صور المشروع<input name="images" type="file" accept="image/*" multiple required></label><label><span>إظهار في سلايد البداية</span><input name="featured" type="checkbox" style="width:auto"></label></div><div class="actions"><button class="primary" type="submit">رفع ونشر المشروع</button></div></form><div class="status" id="status"></div></section>
+    <section class="card"><h2>المشاريع الحالية</h2><div class="projects" id="projects"></div></section>
+  </div>
+</main>
+<script>
+const OWNER='ary1media1-max',REPO='ary1media1.github.io',BRANCH='main';let token='',projects=[];
+const enc=new TextEncoder(),dec=new TextDecoder();
+const bytes=a=>Uint8Array.from(atob(a),c=>c.charCodeAt(0)),b64=a=>btoa(String.fromCharCode(...new Uint8Array(a)));
+async function key(password,salt){const base=await crypto.subtle.importKey('raw',enc.encode(password),'PBKDF2',false,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:180000,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])}
+async function seal(value,password){const salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12)),data=await crypto.subtle.encrypt({name:'AES-GCM',iv},await key(password,salt),enc.encode(value));return JSON.stringify({salt:b64(salt),iv:b64(iv),data:b64(data)})}
+async function openSeal(value,password){const x=JSON.parse(value);return dec.decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:bytes(x.iv)},await key(password,bytes(x.salt)),bytes(x.data)))}
+const api=async(path,options={})=>{const response=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`,{...options,headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28',...(options.headers||{})}});if(!response.ok)throw new Error((await response.json()).message||'تعذر الاتصال بـ GitHub');return response.json()};
+const setStatus=(message,error=false)=>{const el=document.querySelector('#status');el.textContent=message;el.style.background=error?'#f8dddd':'#e4f3e7';el.classList.add('show')};
+async function put(path,content,message){let sha;try{sha=(await api(path)).sha}catch(e){}return api(path,{method:'PUT',body:JSON.stringify({message,content:btoa(unescape(encodeURIComponent(content))),branch:BRANCH,...(sha?{sha}:{})})})}
+async function putBinary(path,file){let sha;try{sha=(await api(path)).sha}catch(e){}const raw=new Uint8Array(await file.arrayBuffer());return api(path,{method:'PUT',body:JSON.stringify({message:`Add ${path}`,content:b64(raw),branch:BRANCH,...(sha?{sha}:{})})})}
+async function load(){projects=await fetch(`projects.json?t=${Date.now()}`,{cache:'no-store'}).then(r=>r.json());render()}
+function render(){document.querySelector('#projects').innerHTML=projects.map((p,i)=>`<div class="project"><img src="${p.images[0]}" alt=""><div><strong>${p.title}</strong><small>${p.categoryLabel} · ${p.images.length} صور</small></div><button class="danger" data-delete="${i}">حذف</button></div>`).join('');document.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>removeProject(+b.dataset.delete))}
+async function removeProject(index){if(!confirm(`حذف مشروع «${projects[index].title}» من المعرض؟`))return;projects.splice(index,1);await put('projects.json',JSON.stringify(projects,null,2),'Remove project');render();alert('تم حذف المشروع، وسيظهر التحديث خلال دقائق.')}
+document.querySelector('#save-setup').onclick=async()=>{const t=document.querySelector('#token').value.trim(),p=document.querySelector('#new-password').value;if(!t||p.length<8)return alert('أدخل المفتاح وكلمة مرور من 8 أحرف على الأقل.');localStorage.aryAdmin=await seal(t,p);location.reload()};
+document.querySelector('#login').onclick=async()=>{try{token=await openSeal(localStorage.aryAdmin,document.querySelector('#password').value);await api('projects.json');document.querySelector('#unlock').hidden=true;document.querySelector('#manager').hidden=false;await load()}catch(e){alert('كلمة المرور غير صحيحة أو انتهت صلاحية مفتاح GitHub.')}};
+document.querySelector('#reset').onclick=()=>{if(confirm('إزالة الربط المحفوظ من هذا الجهاز؟')){localStorage.removeItem('aryAdmin');location.reload()}};
+document.querySelector('#project-form').onsubmit=async(e)=>{e.preventDefault();const form=e.currentTarget,files=[...form.images.files];if(!files.length)return;try{setStatus('جاري رفع الصور…');const slug=`project-${Date.now()}`,paths=[];for(let i=0;i<files.length;i++){const ext=(files[i].name.split('.').pop()||'jpg').toLowerCase();const path=`assets/projects/${slug}-${String(i+1).padStart(2,'0')}.${ext}`;await putBinary(path,files[i]);paths.push(path)}const labels={residential:'سكني',commercial:'تجاري',hospitality:'فندقي',interior:'تصميم داخلي'};projects.unshift({id:slug,title:form.title.value.trim(),category:form.category.value,categoryLabel:labels[form.category.value],description:form.description.value.trim(),images:paths,featured:form.featured.checked});setStatus('جاري تحديث المعرض…');await put('projects.json',JSON.stringify(projects,null,2),`Add project: ${form.title.value.trim()}`);form.reset();render();setStatus('تم نشر المشروع بنجاح. سيظهر في الموقع خلال دقائق.')}catch(error){setStatus(error.message,true)}};
+if(localStorage.aryAdmin){document.querySelector('#setup').hidden=true;document.querySelector('#unlock').hidden=false}
+</script>
+</body></html>
